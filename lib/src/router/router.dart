@@ -1,3 +1,4 @@
+import 'package:flutter_app/src/features/auth/views/intro_screen.dart';
 import 'package:flutter_app/src/features/home/views/home_screen.dart';
 import 'package:go_router/go_router.dart';
 
@@ -12,7 +13,7 @@ final router = GoRouter(
     GoRoute(
       path: '/',
       name: AppRoute.home.name,
-      builder: (context, state) => const HomeScreen(),
+      builder: (context, state) => const IntroScreen(),
     ),
   ],
 );
