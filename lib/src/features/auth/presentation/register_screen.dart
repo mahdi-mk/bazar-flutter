@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/src/router/router.dart';
-import 'package:flutter_app/src/theme/settings/colors.dart';
 import 'package:flutter_app/src/theme/settings/sizes.dart';
 import 'package:flutter_app/src/theme/settings/typography.dart';
 import 'package:flutter_app/src/theme/widgets/buttons/primary_button.dart';

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/src/theme/settings/colors.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class PrimaryIconButton extends StatelessWidget {
   final IconData icon;
