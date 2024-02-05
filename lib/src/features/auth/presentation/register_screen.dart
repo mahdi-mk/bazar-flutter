@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/src/router/router.dart';
 import 'package:flutter_app/src/theme/settings/colors.dart';
 import 'package:flutter_app/src/theme/settings/sizes.dart';
-import 'package:flutter_app/src/theme/settings/text.dart';
+import 'package:flutter_app/src/theme/settings/typography.dart';
 import 'package:flutter_app/src/theme/widgets/buttons/primary_button.dart';
 import 'package:flutter_app/src/theme/widgets/buttons/primary_text_button.dart';
 import 'package:flutter_app/src/theme/widgets/form/primary_text_input.dart';
@@ -38,12 +38,12 @@ class RegisterScreen extends StatelessWidget {
             children: [
               Text(
                 "Create account",
-                style: TextStyles.heading,
+                style: heading,
               ),
               gapH12,
               Text(
                 "Sign up to get started!",
-                style: TextStyles.subheading,
+                style: subheading,
               ),
               gapH52,
               const PrimaryTextInput(
@@ -80,7 +80,7 @@ class RegisterScreen extends StatelessWidget {
                   children: [
                     Text(
                       "Already have an account? ",
-                      style: TextStyles.body,
+                      style: body,
                     ),
                     PrimaryTextButton(
                       text: "Sign In",

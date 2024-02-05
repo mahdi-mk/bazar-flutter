@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/src/router/router.dart';
 import 'package:flutter_app/src/theme/settings/colors.dart';
 import 'package:flutter_app/src/theme/settings/sizes.dart';
-import 'package:flutter_app/src/theme/settings/text.dart';
+import 'package:flutter_app/src/theme/settings/typography.dart';
 import 'package:flutter_app/src/theme/widgets/buttons/primary_button.dart';
 import 'package:flutter_app/src/theme/widgets/buttons/primary_text_button.dart';
 import 'package:flutter_app/src/theme/widgets/form/primary_text_input.dart';
@@ -38,12 +38,12 @@ class LoginScreen extends StatelessWidget {
             children: [
               Text(
                 "Welcome back",
-                style: TextStyles.heading,
+                style: heading,
               ),
               gapH12,
               Text(
                 "Enter your credentials to continue",
-                style: TextStyles.subheading,
+                style: subheading,
               ),
               gapH52,
               const PrimaryTextInput(
@@ -80,7 +80,7 @@ class LoginScreen extends StatelessWidget {
                   children: [
                     Text(
                       "Don't have an account? ",
-                      style: TextStyles.body,
+                      style: body,
                     ),
                     PrimaryTextButton(
                       text: "Sign Up",
