@@ -4,6 +4,7 @@ import 'package:flutter_app/src/theme/settings/colors.dart';
 import 'package:flutter_app/src/theme/settings/sizes.dart';
 import 'package:flutter_app/src/theme/settings/typography.dart';
 import 'package:flutter_app/src/theme/widgets/buttons/primary_button.dart';
+import 'package:flutter_app/src/theme/widgets/buttons/primary_icon_button.dart';
 import 'package:flutter_app/src/theme/widgets/buttons/primary_text_button.dart';
 import 'package:flutter_app/src/theme/widgets/form/primary_text_input.dart';
 import 'package:go_router/go_router.dart';
@@ -14,33 +15,26 @@ class RegisterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
-      appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(
-            Icons.arrow_back,
-            color: ThemeColors.primaryText,
-            size: 28,
-          ),
-          onPressed: () {
-            context.pop();
-          },
-        ),
-      ),
-      body: SafeArea(
-        child: Padding(
+      body: SingleChildScrollView(
+        child: Container(
           padding: const EdgeInsets.symmetric(
             vertical: 30,
             horizontal: 20,
           ),
+          height: MediaQuery.of(context).size.height,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              PrimaryIconButton(
+                onPressed: () => context.pop(),
+                icon: Icons.arrow_back,
+              ),
+              gapH40,
               Text(
                 "Create account",
                 style: heading,
               ),
-              gapH12,
+              gapH8,
               Text(
                 "Sign up to get started!",
                 style: subheading,
