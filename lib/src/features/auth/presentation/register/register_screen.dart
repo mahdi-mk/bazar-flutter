@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/src/features/auth/presentation/register/register_form.dart';
 import 'package:flutter_app/src/router/router.dart';
 import 'package:flutter_app/src/theme/settings/sizes.dart';
 import 'package:flutter_app/src/theme/settings/typography.dart';
-import 'package:flutter_app/src/theme/widgets/buttons/primary_button.dart';
 import 'package:flutter_app/src/theme/widgets/buttons/primary_icon_button.dart';
 import 'package:flutter_app/src/theme/widgets/buttons/primary_text_button.dart';
-import 'package:flutter_app/src/theme/widgets/form/primary_text_input.dart';
 import 'package:go_router/go_router.dart';
 
 class RegisterScreen extends StatelessWidget {
@@ -39,33 +38,7 @@ class RegisterScreen extends StatelessWidget {
                 style: subheading,
               ),
               gapH52,
-              const PrimaryTextInput(
-                label: "Name",
-                textInputAction: TextInputAction.next,
-              ),
-              gapH20,
-              const PrimaryTextInput(
-                label: "Email address",
-                keyboardType: TextInputType.emailAddress,
-                textInputAction: TextInputAction.next,
-              ),
-              gapH20,
-              const PrimaryTextInput(
-                label: "Password",
-                keyboardType: TextInputType.visiblePassword,
-                textInputAction: TextInputAction.next,
-              ),
-              gapH20,
-              const PrimaryTextInput(
-                label: "Confirm password",
-                keyboardType: TextInputType.visiblePassword,
-                textInputAction: TextInputAction.done,
-              ),
-              gapH52,
-              SizedBox(
-                width: double.infinity,
-                child: PrimaryButton(text: "Sign Up", onPressed: () {}),
-              ),
+              const RegisterForm(),
               Expanded(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,

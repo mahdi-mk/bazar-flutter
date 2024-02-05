@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/src/theme/settings/sizes.dart';
 import 'package:flutter_app/src/theme/widgets/buttons/primary_button.dart';
-import 'package:flutter_app/src/theme/widgets/buttons/primary_text_button.dart';
 import 'package:flutter_app/src/theme/widgets/form/primary_text_input.dart';
 import 'package:form_validator/form_validator.dart';
 
-class LoginForm extends StatefulWidget {
-  const LoginForm({super.key});
+class RegisterForm extends StatefulWidget {
+  const RegisterForm({super.key});
 
   @override
-  State<LoginForm> createState() => _LoginFormState();
+  State<RegisterForm> createState() => _RegisterFormState();
 }
 
-class _LoginFormState extends State<LoginForm> {
+class _RegisterFormState extends State<RegisterForm> {
   final _formKey = GlobalKey<FormState>();
+  final _nameController = TextEditingController();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
 
   void _submit() {
     if (_formKey.currentState!.validate()) {
-      // TODO: implement the login process.
+      // TODO: implement the registration process.
     }
   }
 
@@ -30,7 +30,14 @@ class _LoginFormState extends State<LoginForm> {
       child: Column(
         children: [
           PrimaryTextInput(
-            label: "Email Address",
+            label: "Name",
+            textInputAction: TextInputAction.next,
+            validator: ValidationBuilder().maxLength(255).build(),
+            controller: _nameController,
+          ),
+          gapH20,
+          PrimaryTextInput(
+            label: "Email address",
             keyboardType: TextInputType.emailAddress,
             textInputAction: TextInputAction.next,
             validator: ValidationBuilder().email().maxLength(50).build(),
@@ -40,25 +47,21 @@ class _LoginFormState extends State<LoginForm> {
           PrimaryTextInput(
             label: "Password",
             keyboardType: TextInputType.visiblePassword,
-            textInputAction: TextInputAction.done,
-            isPassword: true,
+            textInputAction: TextInputAction.next,
             validator: ValidationBuilder().minLength(8).maxLength(50).build(),
             controller: _passwordController,
           ),
-          gapH8,
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              PrimaryTextButton(text: "Forgot password?", onPressed: () {}),
-            ],
+          gapH20,
+          PrimaryTextInput(
+            label: "Confirm password",
+            keyboardType: TextInputType.visiblePassword,
+            textInputAction: TextInputAction.done,
+            validator: ValidationBuilder().minLength(8).maxLength(50).build(),
           ),
           gapH52,
           SizedBox(
             width: double.infinity,
-            child: PrimaryButton(
-              text: "Sign In",
-              onPressed: () => _submit(),
-            ),
+            child: PrimaryButton(text: "Sign Up", onPressed: () => _submit()),
           ),
         ],
       ),
