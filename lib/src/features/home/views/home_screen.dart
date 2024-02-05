@@ -8,7 +8,7 @@ class HomeScreen extends StatelessWidget {
     return Container(
       color: Colors.white,
       child: const Center(
-        child: Text('Home'),
+        child: Text("Hello"),
       ),
     );
   }
