@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/src/router/router.dart';
 import 'package:flutter_app/src/theme/settings/text.dart';
 import 'package:flutter_app/src/theme/widgets/buttons/primary_button.dart';
 import 'package:flutter_app/src/theme/widgets/buttons/primary_text_button.dart';
 import 'package:flutter_app/src/theme/widgets/form/primary_text_input.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -10,6 +12,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: null,
       body: SafeArea(
         child: Padding(
@@ -37,6 +40,7 @@ class LoginScreen extends StatelessWidget {
               const PrimaryTextInput(
                 label: "Email Address",
                 keyboardType: TextInputType.emailAddress,
+                textInputAction: TextInputAction.next,
               ),
               const SizedBox(
                 height: 20,
@@ -44,6 +48,7 @@ class LoginScreen extends StatelessWidget {
               const PrimaryTextInput(
                 label: "Password",
                 keyboardType: TextInputType.visiblePassword,
+                textInputAction: TextInputAction.done,
                 isPassword: true,
               ),
               const SizedBox(
@@ -76,7 +81,7 @@ class LoginScreen extends StatelessWidget {
                     ),
                     PrimaryTextButton(
                       text: "Sign Up",
-                      onPressed: () {},
+                      onPressed: () => context.goNamed(AppRoute.register.name),
                     ),
                   ],
                 ),

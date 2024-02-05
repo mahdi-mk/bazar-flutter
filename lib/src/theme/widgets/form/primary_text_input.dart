@@ -5,12 +5,14 @@ import 'package:google_fonts/google_fonts.dart';
 class PrimaryTextInput extends StatelessWidget {
   final String label;
   final TextInputType keyboardType;
+  final TextInputAction textInputAction;
   final bool isPassword;
 
   const PrimaryTextInput({
     super.key,
     required this.label,
     this.keyboardType = TextInputType.text,
+    this.textInputAction = TextInputAction.none,
     this.isPassword = false,
   });
 
@@ -18,6 +20,7 @@ class PrimaryTextInput extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       keyboardType: keyboardType,
+      textInputAction: textInputAction,
       obscureText: isPassword,
       style: GoogleFonts.sora(
         color: ThemeColors.primaryText,
