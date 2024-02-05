@@ -1,17 +1,18 @@
 import 'package:flutter_app/src/features/auth/presentation/get_started_screen.dart';
 import 'package:flutter_app/src/features/auth/presentation/login_screen.dart';
 import 'package:flutter_app/src/features/auth/presentation/register_screen.dart';
-import 'package:flutter_app/src/features/home/views/home_screen.dart';
+import 'package:flutter_app/src/features/home/presentation/home_screen.dart';
 import 'package:go_router/go_router.dart';
 
 enum AppRoute {
   home,
+  getStarted,
   login,
   register,
 }
 
 final router = GoRouter(
-  initialLocation: '/auth/',
+  initialLocation: '/',
   debugLogDiagnostics: true,
   routes: [
     GoRoute(
@@ -26,6 +27,7 @@ final router = GoRouter(
 
     GoRoute(
       path: '/auth',
+      name: AppRoute.getStarted.name,
       builder: (context, state) => const GetStartedScreen(),
       routes: [
         GoRoute(
