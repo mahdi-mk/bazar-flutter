@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/src/router/router.dart';
+import 'package:flutter_app/src/theme/settings/colors.dart';
+import 'package:flutter_app/src/theme/settings/sizes.dart';
 import 'package:flutter_app/src/theme/settings/text.dart';
 import 'package:flutter_app/src/theme/widgets/buttons/primary_button.dart';
 import 'package:flutter_app/src/theme/widgets/buttons/primary_text_button.dart';
@@ -13,7 +15,18 @@ class RegisterScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      appBar: null,
+      appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back,
+            color: ThemeColors.primaryText,
+            size: 28,
+          ),
+          onPressed: () {
+            context.pop();
+          },
+        ),
+      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(
@@ -27,47 +40,35 @@ class RegisterScreen extends StatelessWidget {
                 "Create account",
                 style: TextStyles.heading,
               ),
-              const SizedBox(
-                height: 10,
-              ),
+              gapH12,
               Text(
                 "Sign up to get started!",
                 style: TextStyles.subheading,
               ),
-              const SizedBox(
-                height: 50,
-              ),
+              gapH52,
               const PrimaryTextInput(
                 label: "Name",
                 textInputAction: TextInputAction.next,
               ),
-              const SizedBox(
-                height: 20,
-              ),
+              gapH20,
               const PrimaryTextInput(
                 label: "Email address",
                 keyboardType: TextInputType.emailAddress,
                 textInputAction: TextInputAction.next,
               ),
-              const SizedBox(
-                height: 20,
-              ),
+              gapH20,
               const PrimaryTextInput(
                 label: "Password",
                 keyboardType: TextInputType.visiblePassword,
                 textInputAction: TextInputAction.next,
               ),
-              const SizedBox(
-                height: 20,
-              ),
+              gapH20,
               const PrimaryTextInput(
                 label: "Confirm password",
                 keyboardType: TextInputType.visiblePassword,
                 textInputAction: TextInputAction.done,
               ),
-              const SizedBox(
-                height: 50,
-              ),
+              gapH52,
               SizedBox(
                 width: double.infinity,
                 child: PrimaryButton(text: "Sign Up", onPressed: () {}),

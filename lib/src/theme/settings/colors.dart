@@ -10,6 +10,8 @@ class ThemeColors {
 
   static final Color secondary = HexColor.fromHex('#D5E7D4');
 
+  static final Color alternate = HexColor.fromHex('#1F5460');
+
   //----------------------------------------------------------------------------
   // Utility Colors
   //----------------------------------------------------------------------------

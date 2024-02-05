@@ -1,3 +1,4 @@
+import 'package:flutter_app/src/features/auth/presentation/get_started_screen.dart';
 import 'package:flutter_app/src/features/auth/presentation/login_screen.dart';
 import 'package:flutter_app/src/features/auth/presentation/register_screen.dart';
 import 'package:flutter_app/src/features/home/views/home_screen.dart';
@@ -10,7 +11,7 @@ enum AppRoute {
 }
 
 final router = GoRouter(
-  initialLocation: '/auth/login',
+  initialLocation: '/auth/',
   debugLogDiagnostics: true,
   routes: [
     GoRoute(
@@ -24,14 +25,20 @@ final router = GoRouter(
     //-------------------------------------
 
     GoRoute(
-      path: '/auth/login',
-      name: AppRoute.login.name,
-      builder: (context, state) => const LoginScreen(),
-    ),
-    GoRoute(
-      path: '/auth/register',
-      name: AppRoute.register.name,
-      builder: (context, state) => const RegisterScreen(),
-    ),
+      path: '/auth',
+      builder: (context, state) => const GetStartedScreen(),
+      routes: [
+        GoRoute(
+          path: 'login',
+          name: AppRoute.login.name,
+          builder: (context, state) => const LoginScreen(),
+        ),
+        GoRoute(
+          path: 'register',
+          name: AppRoute.register.name,
+          builder: (context, state) => const RegisterScreen(),
+        ),
+      ],
+    )
   ],
 );
