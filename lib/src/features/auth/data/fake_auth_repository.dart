@@ -51,3 +51,9 @@ final authRepositoryProvider = Provider<AuthRepository>(
     return auth;
   },
 );
+
+final authStateChangesProvider = StreamProvider.autoDispose<User?>(
+  (ref) {
+    return ref.watch(authRepositoryProvider).authStateChanges();
+  },
+);
