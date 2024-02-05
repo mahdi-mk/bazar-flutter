@@ -14,9 +14,13 @@ class LoginForm extends StatefulWidget {
 
 class _LoginFormState extends State<LoginForm> {
   final _formKey = GlobalKey<FormState>();
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
 
   void _submit() {
-    _formKey.currentState!.validate();
+    if (_formKey.currentState!.validate()) {
+      // TODO: implement the login process.
+    }
   }
 
   @override
@@ -31,6 +35,7 @@ class _LoginFormState extends State<LoginForm> {
               keyboardType: TextInputType.emailAddress,
               textInputAction: TextInputAction.next,
               validator: ValidationBuilder().email().maxLength(50).build(),
+              controller: _emailController,
             ),
             gapH20,
             PrimaryTextInput(
@@ -39,6 +44,7 @@ class _LoginFormState extends State<LoginForm> {
               textInputAction: TextInputAction.done,
               isPassword: true,
               validator: ValidationBuilder().minLength(8).maxLength(50).build(),
+              controller: _passwordController,
             ),
             gapH8,
             Row(

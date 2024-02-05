@@ -8,6 +8,7 @@ class PrimaryTextInput extends StatelessWidget {
   final TextInputAction textInputAction;
   final bool isPassword;
   final String? Function(String?)? validator;
+  final TextEditingController? controller;
 
   const PrimaryTextInput({
     super.key,
@@ -16,6 +17,7 @@ class PrimaryTextInput extends StatelessWidget {
     this.textInputAction = TextInputAction.none,
     this.isPassword = false,
     this.validator,
+    this.controller,
   });
 
   @override
@@ -25,6 +27,7 @@ class PrimaryTextInput extends StatelessWidget {
       textInputAction: textInputAction,
       obscureText: isPassword,
       validator: validator,
+      controller: controller,
       style: GoogleFonts.sora(
         color: ThemeColors.primaryText,
       ),
