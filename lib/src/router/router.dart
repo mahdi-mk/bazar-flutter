@@ -1,5 +1,5 @@
 import 'package:flutter_app/src/features/auth/presentation/get_started_screen.dart';
-import 'package:flutter_app/src/features/auth/presentation/login_screen.dart';
+import 'package:flutter_app/src/features/auth/presentation/login/login_screen.dart';
 import 'package:flutter_app/src/features/auth/presentation/register_screen.dart';
 import 'package:flutter_app/src/features/home/presentation/home_screen.dart';
 import 'package:go_router/go_router.dart';
@@ -12,7 +12,7 @@ enum AppRoute {
 }
 
 final router = GoRouter(
-  initialLocation: '/',
+  initialLocation: '/auth',
   debugLogDiagnostics: true,
   routes: [
     GoRoute(

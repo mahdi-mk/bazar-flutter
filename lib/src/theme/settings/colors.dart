@@ -24,5 +24,5 @@ class ThemeColors {
   // Semantic Colors
   //----------------------------------------------------------------------------
 
-  // ...
+  static final Color danger = HexColor.fromHex('#dc2626');
 }

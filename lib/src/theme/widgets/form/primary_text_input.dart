@@ -7,6 +7,7 @@ class PrimaryTextInput extends StatelessWidget {
   final TextInputType keyboardType;
   final TextInputAction textInputAction;
   final bool isPassword;
+  final String? Function(String?)? validator;
 
   const PrimaryTextInput({
     super.key,
@@ -14,6 +15,7 @@ class PrimaryTextInput extends StatelessWidget {
     this.keyboardType = TextInputType.text,
     this.textInputAction = TextInputAction.none,
     this.isPassword = false,
+    this.validator,
   });
 
   @override
@@ -22,6 +24,7 @@ class PrimaryTextInput extends StatelessWidget {
       keyboardType: keyboardType,
       textInputAction: textInputAction,
       obscureText: isPassword,
+      validator: validator,
       style: GoogleFonts.sora(
         color: ThemeColors.primaryText,
       ),
@@ -30,7 +33,7 @@ class PrimaryTextInput extends StatelessWidget {
           horizontal: 17,
           vertical: 17,
         ),
-        label: Text(label),
+        labelText: label,
         labelStyle: GoogleFonts.sora(
           color: ThemeColors.secondaryText,
           fontSize: 16,
@@ -47,6 +50,20 @@ class PrimaryTextInput extends StatelessWidget {
           borderRadius: BorderRadius.circular(5),
           borderSide: BorderSide(
             color: ThemeColors.secondaryText.withOpacity(0.5),
+            width: 1.5,
+          ),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(5),
+          borderSide: BorderSide(
+            color: ThemeColors.danger.withOpacity(0.5),
+            width: 1.5,
+          ),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(5),
+          borderSide: BorderSide(
+            color: ThemeColors.danger.withOpacity(0.5),
             width: 1.5,
           ),
         ),
