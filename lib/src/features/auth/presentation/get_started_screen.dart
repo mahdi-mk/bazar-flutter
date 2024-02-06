@@ -13,6 +13,7 @@ class GetStartedScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: ThemeColors.alternate,
       appBar: AppBar(
         title: RichText(
