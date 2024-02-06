@@ -24,7 +24,7 @@ class LoginScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               PrimaryIconButton(
-                onPressed: () => context.pop(),
+                onPressed: () => context.goNamed(AppRoute.getStarted.name),
                 icon: Icons.arrow_back,
               ),
               gapH40,

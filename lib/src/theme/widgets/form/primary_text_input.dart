@@ -7,6 +7,7 @@ class PrimaryTextInput extends StatelessWidget {
   final TextInputType keyboardType;
   final TextInputAction textInputAction;
   final bool isPassword;
+  final bool isDisabled;
   final String? Function(String?)? validator;
   final TextEditingController? controller;
 
@@ -16,6 +17,7 @@ class PrimaryTextInput extends StatelessWidget {
     this.keyboardType = TextInputType.text,
     this.textInputAction = TextInputAction.none,
     this.isPassword = false,
+    this.isDisabled = false,
     this.validator,
     this.controller,
   });
@@ -32,6 +34,7 @@ class PrimaryTextInput extends StatelessWidget {
         color: ThemeColors.primaryText,
       ),
       decoration: InputDecoration(
+        enabled: !isDisabled,
         contentPadding: const EdgeInsets.symmetric(
           horizontal: 17,
           vertical: 17,
@@ -67,6 +70,13 @@ class PrimaryTextInput extends StatelessWidget {
           borderRadius: BorderRadius.circular(5),
           borderSide: BorderSide(
             color: ThemeColors.danger.withOpacity(0.5),
+            width: 1.5,
+          ),
+        ),
+        disabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(5),
+          borderSide: BorderSide(
+            color: ThemeColors.secondaryText.withOpacity(0.5),
             width: 1.5,
           ),
         ),
