@@ -39,7 +39,7 @@ class SecondaryTextInput extends StatelessWidget {
         prefixIcon: preifxIcon,
         prefixIconColor: prefixIconColor,
         filled: true,
-        fillColor: ThemeColors.secondary.withOpacity(0.3),
+        fillColor: ThemeColors.secondary.withOpacity(0.2),
         enabled: !isDisabled,
         contentPadding: const EdgeInsets.symmetric(
           horizontal: 18,

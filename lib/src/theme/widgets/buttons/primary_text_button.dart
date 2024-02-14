@@ -20,6 +20,7 @@ class PrimaryTextButton extends StatelessWidget {
         text,
         style: GoogleFonts.sora(
           color: ThemeColors.primaryText,
+          fontWeight: FontWeight.w500,
         ),
       ),
     );

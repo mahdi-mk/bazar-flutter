@@ -19,7 +19,7 @@ class SecondaryActionButton extends StatelessWidget {
         size: 26,
       ),
       style: IconButton.styleFrom(
-        backgroundColor: ThemeColors.secondary.withOpacity(0.3),
+        backgroundColor: ThemeColors.secondary.withOpacity(0.2),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(5),
         ),
