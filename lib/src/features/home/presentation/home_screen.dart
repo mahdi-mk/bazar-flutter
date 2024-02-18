@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/src/common/category_card.dart';
 import 'package:flutter_app/src/common/product_card.dart';
 import 'package:flutter_app/src/common/section.dart';
 import 'package:flutter_app/src/features/home/presentation/home_screen_app_bar.dart';
-import 'package:flutter_app/src/features/home/presentation/sections/shop_by_brand_section.dart';
-import 'package:flutter_app/src/features/home/presentation/sections/shop_by_category_section.dart';
+import 'package:flutter_app/src/features/products/domain/category.dart';
 import 'package:flutter_app/src/mock/products.dart';
 import 'package:flutter_app/src/theme/settings/sizes.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-const double appBarHeight = 115;
+const double appBarHeight = 120;
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
@@ -21,32 +21,66 @@ class HomeScreen extends ConsumerWidget {
         child: HomeScreenAppBar(),
       ),
       body: SingleChildScrollView(
-        child: Container(
-          padding: const EdgeInsets.all(14),
+        child: SizedBox(
           height: MediaQuery.of(context).size.height + appBarHeight,
           child: Column(
             children: [
-              const ShopByCategorySection(),
               gapH24,
-              const ShopByBrandSection(),
-              gapH12,
               Section(
+                type: SectionType.categories,
+                heading: 'Shop by Category',
+                itemCount: 10,
+                itemBuilder: (BuildContext context, int index) {
+                  return Padding(
+                    padding: EdgeInsets.only(
+                      left: index == 0 ? 14 : 5,
+                    ),
+                    child: const CategoryCard(
+                      category: Category(id: 'id', name: 'Men'),
+                    ),
+                  );
+                },
+              ),
+              gapH24,
+              Section(
+                type: SectionType.brands,
+                heading: 'Shop by Brand',
+                itemCount: 10,
+                itemBuilder: (BuildContext context, int index) {
+                  return Padding(
+                    padding: EdgeInsets.only(
+                      left: index == 0 ? 14 : 5,
+                    ),
+                    child: const CategoryCard(
+                      category: Category(id: 'id', name: 'Men'),
+                    ),
+                  );
+                },
+              ),
+              gapH24,
+              Section(
+                type: SectionType.products,
                 heading: 'New Arrival',
                 itemCount: 10,
                 itemBuilder: (BuildContext context, int index) {
                   return Padding(
-                    padding: const EdgeInsets.only(right: 7),
+                    padding: EdgeInsets.only(
+                      left: index == 0 ? 14 : 5,
+                    ),
                     child: ProductCard(product: fakeProducts[index]),
                   );
                 },
               ),
-              gapH12,
+              gapH24,
               Section(
+                type: SectionType.products,
                 heading: 'Popular',
                 itemCount: 10,
                 itemBuilder: (BuildContext context, int index) {
                   return Padding(
-                    padding: const EdgeInsets.only(right: 7),
+                    padding: EdgeInsets.only(
+                      left: index == 0 ? 14 : 5,
+                    ),
                     child: ProductCard(product: fakeProducts[index]),
                   );
                 },
