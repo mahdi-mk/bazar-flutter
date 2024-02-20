@@ -6,9 +6,11 @@ class CategoryCard extends StatelessWidget {
   const CategoryCard({
     super.key,
     required this.category,
+    required this.onPressed,
   });
 
   final Category category;
+  final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +27,7 @@ class CategoryCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(5),
         ),
       ),
-      onPressed: () {},
+      onPressed: onPressed,
     );
   }
 }

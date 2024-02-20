@@ -2,17 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/src/theme/settings/colors.dart';
 
 class SecondaryActionButton extends StatelessWidget {
-  final IconData icon;
-
   const SecondaryActionButton({
     super.key,
     required this.icon,
+    required this.onPressed,
   });
+
+  final IconData icon;
+  final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      onPressed: () {},
       icon: Icon(
         icon,
         color: ThemeColors.primaryText,
@@ -24,6 +25,7 @@ class SecondaryActionButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(5),
         ),
       ),
+      onPressed: onPressed,
     );
   }
 }

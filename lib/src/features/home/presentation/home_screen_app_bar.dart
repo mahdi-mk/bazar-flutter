@@ -17,16 +17,18 @@ class HomeScreenAppBar extends StatelessWidget {
           size: 30,
         ),
         centerTitle: true,
-        leading: const Align(
+        leading: Align(
           child: SecondaryActionButton(
             icon: Icons.notifications_outlined,
+            onPressed: () {},
           ),
         ),
-        actions: const [
+        actions: [
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 6),
+            padding: const EdgeInsets.symmetric(horizontal: 6),
             child: SecondaryActionButton(
               icon: Icons.shopping_bag_outlined,
+              onPressed: () {},
             ),
           )
         ],
