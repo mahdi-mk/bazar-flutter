@@ -81,7 +81,15 @@ class SectionWidget extends StatelessWidget {
                     padding: index == 0
                         ? const EdgeInsets.only(left: 14)
                         : const EdgeInsets.symmetric(horizontal: 4),
-                    child: ProductCard(product: item),
+                    child: ProductCard(
+                      product: item,
+                      onPressed: () => context.pushNamed(
+                        AppRoute.productDetails.name,
+                        pathParameters: {
+                          "id": item.id,
+                        },
+                      ),
+                    ),
                   );
                 }
 

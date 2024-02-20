@@ -16,6 +16,13 @@ final subheading = GoogleFonts.sora(
   color: ThemeColors.secondaryText,
 );
 
+/// Used for page and product titles.
+final title = GoogleFonts.sora(
+  fontSize: 21,
+  fontWeight: FontWeight.bold,
+  color: ThemeColors.primaryText,
+);
+
 /// Used for general paragraph text and content throughout your app.
 final body = GoogleFonts.sora(
   fontSize: 14,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/src/common/async_value_widget.dart';
 import 'package:flutter_app/src/features/products/data/category/providers.dart';
 import 'package:flutter_app/src/features/products/presentation/cards/product_card.dart';
+import 'package:flutter_app/src/router/router.dart';
 import 'package:flutter_app/src/theme/widgets/buttons/secondary_action_button.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -41,7 +42,15 @@ class CategoryDetailsScreen extends ConsumerWidget {
             for (int i = 0; i < data.products.length; i++)
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: ProductCard(product: data.products[i]),
+                child: ProductCard(
+                  product: data.products[i],
+                  onPressed: () => context.pushNamed(
+                    AppRoute.productDetails.name,
+                    pathParameters: {
+                      "id": data.products[i].id,
+                    },
+                  ),
+                ),
               ),
           ],
         ),
