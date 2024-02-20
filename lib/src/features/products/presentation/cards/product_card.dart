@@ -24,6 +24,7 @@ class ProductCard extends StatelessWidget {
             image: AssetImage(product.imageUrl),
             fit: BoxFit.cover,
             height: 200,
+            width: 200,
           ),
           gapH8,
           Flexible(
