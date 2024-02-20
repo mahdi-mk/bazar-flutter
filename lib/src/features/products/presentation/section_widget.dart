@@ -4,9 +4,11 @@ import 'package:flutter_app/src/features/products/domain/category.dart';
 import 'package:flutter_app/src/features/products/domain/product.dart';
 import 'package:flutter_app/src/features/products/presentation/cards/category_card.dart';
 import 'package:flutter_app/src/features/products/presentation/cards/product_card.dart';
+import 'package:flutter_app/src/router/router.dart';
 import 'package:flutter_app/src/theme/settings/colors.dart';
 import 'package:flutter_app/src/theme/settings/sizes.dart';
 import 'package:flutter_app/src/theme/widgets/buttons/primary_text_button.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SectionWidget extends StatelessWidget {
@@ -64,7 +66,12 @@ class SectionWidget extends StatelessWidget {
                         : const EdgeInsets.symmetric(horizontal: 4),
                     child: CategoryCard(
                       category: item,
-                      onPressed: () {},
+                      onPressed: () => context.pushNamed(
+                        AppRoute.categoryDetails.name,
+                        pathParameters: {
+                          "id": item.id,
+                        },
+                      ),
                     ),
                   );
                 }

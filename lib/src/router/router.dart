@@ -2,7 +2,7 @@ import 'package:flutter_app/src/features/auth/presentation/get_started_screen.da
 import 'package:flutter_app/src/features/auth/presentation/login/login_screen.dart';
 import 'package:flutter_app/src/features/auth/presentation/register/register_screen.dart';
 import 'package:flutter_app/src/features/home/presentation/home_screen.dart';
-import 'package:flutter_app/src/features/products/presentation/category_details_screen.dart';
+import 'package:flutter_app/src/features/products/presentation/category/category_details_screen.dart';
 import 'package:go_router/go_router.dart';
 
 enum AppRoute {
@@ -30,7 +30,9 @@ final router = GoRouter(
     GoRoute(
       path: '/categories/:id',
       name: AppRoute.categoryDetails.name,
-      builder: (context, state) => const CategoryDetailsScreen(),
+      builder: (context, state) => CategoryDetailsScreen(
+        id: state.pathParameters['id'] ?? '',
+      ),
     ),
 
     //-------------------------------------
